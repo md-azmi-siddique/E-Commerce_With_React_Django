@@ -126,3 +126,17 @@ class InvoiceModel(models.Model):
     
     def __str__(self):
         return self.userID.email
+
+class InvoiceProductsModel(models.Model):
+    productID = models.ForeignKey(ProductsModel, on_delete=models.CASCADE)
+    invoiceID = models.ForeignKey(InvoiceModel, on_delete=models.CASCADE)
+    userID = models.ForeignKey(UsersModel, on_delete=models.CASCADE)
+    color = models.CharField(max_length=255)
+    price = models.CharField(max_length=255)
+    qty = models.CharField(max_length=255)
+    size = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True) 
+    
+    def __str__(self):
+        return self.productID.title
