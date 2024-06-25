@@ -63,3 +63,16 @@ class ProductSliderModel(models.Model):
     productID = models.ForeignKey(ProductsModel, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 
+    
+    def __str__(self):
+        return self.title
+    
+class UsersModel(models.Model):
+    email = models.CharField(max_length=355)
+    otp = models.CharField(max_length=6)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True) 
+    
+    def __str__(self):
+        return self.email
+    
