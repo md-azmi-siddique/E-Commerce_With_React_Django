@@ -36,3 +36,18 @@ class ProductsModel(models.Model):
     brandID = models.ForeignKey(BrandsModel, on_delete= models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+
+class ProductsDetailsModel(models.Model):
+    img1 = models.CharField(max_length=255)
+    img2 = models.CharField(max_length=255)
+    img3 = models.CharField(max_length=255)
+    #img1 = models.CharField(max_length=255)
+    des = models.CharField(max_length=255)
+    color = models.CharField(max_length=255)
+    size = models.CharField(max_length=255)
+    productID = models.ForeignKey(ProductsModel, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True) 
