@@ -75,4 +75,12 @@ class UsersModel(models.Model):
     
     def __str__(self):
         return self.email
-    
+
+class ProfilesModel(models.Model):
+    userID = models.ForeignKey(UsersModel, on_delete=models.CASCADE)
+    customer_address = models.CharField(max_length=255)
+    customer_phone = models.CharField(max_length=255)
+    customer_name = models.CharField(max_length=255)
+    customer_city = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True) 
