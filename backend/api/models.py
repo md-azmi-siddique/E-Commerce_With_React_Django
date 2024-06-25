@@ -53,7 +53,7 @@ class ProductsDetailsModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True) 
     
     def __str__(self):
-        return self.productID
+        return self.productID.title
     
 class ProductSliderModel(models.Model):
     title = models.CharField(max_length=255)
@@ -84,3 +84,15 @@ class ProfilesModel(models.Model):
     customer_city = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 
+    
+    def __str__(self):
+        return self.customer_name
+    
+class WishListModel(models.Model):
+    productID = models.ForeignKey(ProductsModel, on_delete=models.CASCADE)
+    userID = models.ForeignKey(UsersModel, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True) 
+    
+    def __str__(self):
+        return self.productID.title
