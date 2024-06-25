@@ -1,6 +1,6 @@
 # CRUD-Django
 py -m venv .venv
-django-admin startproject crud
+django-admin startproject projectname
 py manage.py startapp api
 
 installing Rest Framework:
