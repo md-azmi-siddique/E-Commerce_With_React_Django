@@ -109,3 +109,20 @@ class CartModel(models.Model):
     
     def __str__(self):
         return self.productID.title
+    
+class InvoiceModel(models.Model):
+    userID = models.ForeignKey(UsersModel, on_delete=models.CASCADE)
+    payable = models.CharField(max_length=255)
+    customer_details = models.CharField(max_length=255)
+    shipping_details = models.CharField(max_length=255)
+    transID = models.CharField(max_length=255)
+    transID = models.CharField(max_length=255)
+    valID = models.CharField(max_length=255)
+    paymentStatus = models.CharField(max_length=255)
+    total = models.CharField(max_length=255)
+    vat = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True) 
+    
+    def __str__(self):
+        return self.userID.email
