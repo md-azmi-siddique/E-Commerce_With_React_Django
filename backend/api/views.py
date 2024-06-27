@@ -38,3 +38,38 @@ class BrandUpdateView(generics.RetrieveUpdateAPIView):
 class BrandDeleteView(generics.DestroyAPIView):
     queryset = BrandsModel.objects.all()
     serializer_class = BrandsSerializers
+    
+
+#--------------Product Model--------------#
+class ProductCreateView(generics.ListCreateAPIView):
+    queryset = ProductsModel.objects.all()
+    serializer_class = ProductsSerializers
+
+class ProductReadView(generics.ListAPIView):
+    queryset = ProductsModel.objects.all()
+    serializer_class = ProductsSerializers
+
+class ProductUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = ProductsModel.objects.all()
+    serializer_class = ProductsSerializers
+
+class ProductDeleteView(generics.DestroyAPIView):
+    queryset = ProductsModel.objects.all()
+    serializer_class = ProductsSerializers
+    
+#--------------Products Details Model--------------#
+class ProductsDetailsCreateView(generics.ListCreateAPIView):
+    queryset = ProductsDetailsModel.objects.all()
+    serializer_class = ProductsDetailsSerializers
+
+class ProductDetailsReadView(generics.ListAPIView):
+    queryset = ProductsDetailsModel.objects.all()
+    serializer_class = ProductsDetailsSerializers
+
+class ProductDetailsUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = ProductsDetailsModel.objects.all()
+    serializer_class = ProductsDetailsSerializers
+
+class ProductDetailsDeleteView(generics.DestroyAPIView):
+    queryset = ProductsDetailsModel.objects.all()
+    serializer_class = ProductsDetailsSerializers

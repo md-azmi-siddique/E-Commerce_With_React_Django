@@ -9,7 +9,7 @@ class CategoriesModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return self.categoryName
+        return self.category_name
 
 #Brands Model
 class BrandsModel(models.Model):
@@ -19,11 +19,11 @@ class BrandsModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return self.categoryName
+        return self.brand_name
     
 #Product Model
 class ProductsModel(models.Model):
-    title = models.CharField(max_length=255)
+    product_name = models.CharField(max_length=255)
     shortDes = models.CharField(max_length=255)
     price = models.CharField(max_length=255)
     discount = models.BooleanField(default=False)
@@ -38,14 +38,14 @@ class ProductsModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return self.title
+        return self.product_name
 
 class ProductsDetailsModel(models.Model):
     img1 = models.CharField(max_length=255)
     img2 = models.CharField(max_length=255)
     img3 = models.CharField(max_length=255)
     #img1 = models.CharField(max_length=255)
-    des = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
     color = models.CharField(max_length=255)
     size = models.CharField(max_length=255)
     product_ID = models.ForeignKey(ProductsModel, on_delete=models.CASCADE)
@@ -53,7 +53,7 @@ class ProductsDetailsModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True) 
     
     def __str__(self):
-        return self.productID.title
+        return self.description
     
 class ProductSliderModel(models.Model):
     title = models.CharField(max_length=255)
