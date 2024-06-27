@@ -4,7 +4,8 @@ from django.db import models
 #Category Model
 class CategoriesModel(models.Model):
     category_name = models.CharField(max_length=255)
-    category_img = models.CharField(max_length=255)
+    #category_img = models.CharField(max_length=255)
+    category_img = models.ImageField(upload_to='images/categoryImg/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

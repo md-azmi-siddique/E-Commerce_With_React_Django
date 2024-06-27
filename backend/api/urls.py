@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from . views import *
 from django.urls import path
 
@@ -27,3 +29,6 @@ urlpatterns = [
     path('products/details/update/<int:pk>/', ProductDetailsUpdateView.as_view(), name='Brands Update'),
     path('products/details/delete/<int:pk>', ProductDetailsDeleteView.as_view(), name='Brands Delete'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
