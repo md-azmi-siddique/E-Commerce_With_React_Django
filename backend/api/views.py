@@ -73,3 +73,145 @@ class ProductDetailsUpdateView(generics.RetrieveUpdateAPIView):
 class ProductDetailsDeleteView(generics.DestroyAPIView):
     queryset = ProductsDetailsModel.objects.all()
     serializer_class = ProductsDetailsSerializers
+    
+    
+#--------------Products Slider Model--------------#
+class ProductsSliderCreateView(generics.ListCreateAPIView):
+    queryset = ProductSliderModel.objects.all()
+    serializer_class = ProductSliderSerializers
+
+class ProductSliderReadView(generics.ListAPIView):
+    queryset = ProductSliderModel.objects.all()
+    serializer_class = ProductSliderSerializers
+
+class ProductSliderUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = ProductSliderModel.objects.all()
+    serializer_class = ProductSliderSerializers
+
+class ProductSliderDeleteView(generics.DestroyAPIView):
+    queryset = ProductSliderModel.objects.all()
+    serializer_class = ProductSliderSerializers
+    
+
+#--------------User Model--------------#
+class UserCreateView(generics.ListCreateAPIView):
+    queryset = UsersModel.objects.all()
+    serializer_class = UsersSerializers
+
+class UserReadView(generics.ListAPIView):
+    queryset = UsersModel.objects.all()
+    serializer_class = UsersSerializers
+
+class UserUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = UsersModel.objects.all()
+    serializer_class = UsersSerializers
+
+class UserDeleteView(generics.DestroyAPIView):
+    queryset = UsersModel.objects.all()
+    serializer_class = UsersSerializers
+    
+#--------------Profiles Model--------------#
+class ProfileCreateView(generics.ListCreateAPIView):
+    queryset = ProfilesModel.objects.all()
+    serializer_class = UsersSerializers
+
+class ProfileReadView(generics.ListAPIView):
+    queryset = ProfilesModel.objects.all()
+    serializer_class = ProfileSerializers
+
+class ProfileUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = ProfilesModel.objects.all()
+    serializer_class = ProfileSerializers
+
+class ProfileDeleteView(generics.DestroyAPIView):
+    queryset = ProfilesModel.objects.all()
+    serializer_class = ProfileSerializers
+    
+
+#--------------WishList Model--------------#
+class WishListCreateView(generics.ListCreateAPIView):
+    queryset = WishListModel.objects.all()
+    serializer_class = WishListSerializers
+
+class WishListReadView(generics.ListAPIView):
+    queryset = WishListModel.objects.all()
+    serializer_class = WishListSerializers
+
+class WishListUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = WishListModel.objects.all()
+    serializer_class = WishListSerializers
+
+class WishListDeleteView(generics.DestroyAPIView):
+    queryset = WishListModel.objects.all()
+    serializer_class = WishListSerializers
+
+
+#--------------Cart Model--------------#
+class CartCreateView(generics.ListCreateAPIView):
+    queryset = CartModel.objects.all()
+    serializer_class = CartSerializers
+
+class CartReadView(generics.ListAPIView):
+    queryset = CartModel.objects.all()
+    serializer_class = CartSerializers
+
+class CartUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = CartModel.objects.all()
+    serializer_class = CartSerializers
+
+class CartDeleteView(generics.DestroyAPIView):
+    queryset = CartModel.objects.all()
+    serializer_class = CartSerializers
+
+#--------------Invoice Model--------------#
+class InvoiceCreateView(generics.ListCreateAPIView):
+    queryset = InvoiceModel.objects.all()
+    serializer_class = InvoiceSerializers
+
+class InvoiceReadView(generics.ListAPIView):
+    queryset = InvoiceModel.objects.all()
+    serializer_class = InvoiceSerializers
+
+class InvoiceUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = InvoiceModel.objects.all()
+    serializer_class = InvoiceSerializers
+
+class InvoiceDeleteView(generics.DestroyAPIView):
+    queryset = InvoiceModel.objects.all()
+    serializer_class = InvoiceSerializers
+    
+
+#--------------Payment Model--------------#
+class PaymentCreateView(generics.ListCreateAPIView):
+    queryset = PaymentSettingsModel.objects.all()
+    serializer_class = PaymentSerializers
+
+class PaymentReadView(generics.ListAPIView):
+    queryset = PaymentSettingsModel.objects.all()
+    serializer_class = PaymentSerializers
+
+class PaymentUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = PaymentSettingsModel.objects.all()
+    serializer_class = PaymentSerializers
+
+class PaymentDeleteView(generics.DestroyAPIView):
+    queryset = PaymentSettingsModel.objects.all()
+    serializer_class = PaymentSerializers
+    
+
+#--------------Features Model--------------#
+class FeaturesCreateView(generics.ListCreateAPIView):
+    queryset = FeaturesModel.objects.all()
+    serializer_class = FeaturesSerializers
+
+class FeaturesReadView(generics.ListAPIView):
+    queryset = FeaturesModel.objects.all()
+    serializer_class = FeaturesSerializers
+
+class FeaturesUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = FeaturesModel.objects.all()
+    serializer_class = FeaturesSerializers
+
+class FeaturesDeleteView(generics.DestroyAPIView):
+    queryset = FeaturesModel.objects.all()
+    serializer_class = FeaturesSerializers

@@ -3,18 +3,10 @@ from rest_framework import serializers
 from .models import *
 
 class CategoriesSerializers(serializers.ModelSerializer):
-    category_img_url = serializers.SerializerMethodField()
-
     class Meta:
         model = CategoriesModel
         fields = '__all__'
 
-    def get_category_img_url(self, obj):
-        request = self.context.get('request')
-        if obj.category_img:
-            image_url = obj.category_img.url
-            return request.build_absolute_uri(image_url)
-        return None
             
 
 class BrandsSerializers(serializers.ModelSerializer):
@@ -53,3 +45,62 @@ class ProductsDetailsSerializers(serializers.ModelSerializer):
         model = ProductsDetailsModel
         #fields = '__all__'
         fields = ['img1', 'img2', 'img3', 'description', 'color', 'size', 'product_ID', 'product_name']
+
+class ProductSliderSerializers(serializers.ModelSerializer):
+    product_name = serializers.CharField(source = 'product_ID.product_name', read_only = True)
+    class Meta:
+        model = ProductSliderModel
+        fields = ['title', 'des', 'price', 'img', 'productID', 'product_name']
+
+
+class UsersSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = UsersModel
+        fields = '__all__'
+        
+        
+class ProfileSerializers(serializers.ModelSerializer):
+    user_email = serializers.CharField(source = 'user_ID.email', read_only = True)
+    class Meta:
+        model = ProfilesModel
+        fields = '__all__'
+        
+class WishListSerializers(serializers.ModelSerializer):
+    user_email = serializers.CharField(source = 'user_ID.email', read_only = True)
+    product_name = serializers.CharField(source = 'product_ID.product_name', read_only = True)
+    
+    class Meta:
+        model = WishListModel
+        fields = '__all__'
+        
+class CartSerializers(serializers.ModelSerializer):
+    user_email = serializers.CharField(source = 'user_ID.email', read_only = True)
+    product_name = serializers.CharField(source = 'product_ID.product_name', read_only = True)
+    class Meta:
+        model = CartModel
+        fields = '__all__'
+
+class InvoiceSerializers(serializers.ModelSerializer):
+    user_email = serializers.CharField(source = 'user_ID.email', read_only = True)
+    #product_name = serializers.CharField(source = 'product_ID.product_name', read_only = True)   
+    class Meta:
+        model = InvoiceModel
+        fields = '__all__'
+
+class InvoiceProductSerializers(serializers.ModelSerializer):
+    user_email = serializers.CharField(source = 'user_ID.email', read_only = True)
+    product_name = serializers.CharField(source = 'product_ID.product_name', read_only = True)   
+    customer_details = serializers.CharField(source = 'invoice_ID.customer_details', read_only = True)
+    class Meta:
+        model = InvoiceProductsModel
+        fields = '__all__'
+
+class PaymentSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = PaymentSettingsModel
+        fields = '__all__'
+        
+class FeaturesSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = FeaturesModel
+        fields = '__all__'

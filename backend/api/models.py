@@ -10,12 +10,13 @@ class CategoriesModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return self.category_name
+        return f"{self.category_name} - {self.category_img}"
 
 #Brands Model
 class BrandsModel(models.Model):
     brand_name = models.CharField(max_length=255)
-    brand_img = models.CharField(max_length=255)
+    # brand_img = models.CharField(max_length=255)
+    brand_img = models.ImageField(upload_to='images/brandImg/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
@@ -29,7 +30,7 @@ class ProductsModel(models.Model):
     price = models.CharField(max_length=255)
     discount = models.BooleanField(default=False)
     discountPrice = models.CharField(max_length=255)
-    image = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='images/productImg/')
     star = models.CharField(max_length=255)
     stock = models.BooleanField(default=True)
     remark = models.CharField(max_length=255)
@@ -42,9 +43,9 @@ class ProductsModel(models.Model):
         return self.product_name
 
 class ProductsDetailsModel(models.Model):
-    img1 = models.CharField(max_length=255)
-    img2 = models.CharField(max_length=255)
-    img3 = models.CharField(max_length=255)
+    img1 = models.ImageField(upload_to='images/productDetailImg/')
+    img2 = models.ImageField(upload_to='images/productDetailImg/')
+    img3 = models.ImageField(upload_to='images/productDetailImg/')
     #img1 = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     color = models.CharField(max_length=255)
@@ -60,7 +61,7 @@ class ProductSliderModel(models.Model):
     title = models.CharField(max_length=255)
     des = models.CharField(max_length=255)
     price = models.CharField(max_length=255)
-    img = models.CharField(max_length=255)
+    img = models.ImageField(upload_to='images/productSliderImg/')
     productID = models.ForeignKey(ProductsModel, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 
@@ -79,9 +80,9 @@ class UsersModel(models.Model):
 
 class ProfilesModel(models.Model):
     user_ID = models.ForeignKey(UsersModel, on_delete=models.CASCADE)
-    customer_address = models.CharField(max_length=255)
-    customer_phone = models.CharField(max_length=255)
     customer_name = models.CharField(max_length=255)
+    customer_phone = models.CharField(max_length=255)
+    customer_address = models.CharField(max_length=255)
     customer_city = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 
@@ -157,12 +158,12 @@ class PaymentSettingsModel(models.Model):
     def __str__(self):
         return self.store_ID
 
-class featuresModel(models.Model):
+class FeaturesModel(models.Model):
     name = models.CharField(max_length=255)
     des = models.CharField(max_length=255)
-    img = models.CharField(max_length=255)
+    img = models.ImageField(upload_to='images/featureImg/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 
     
     def __str__(self):
-        return self.store_ID
+        return self.name
