@@ -47,35 +47,43 @@ urlpatterns = [
     path('profiles/update/<int:pk>/', ProfileUpdateView.as_view(), name='Brands Update'),
     path('profiles/delete/<int:pk>/', ProfileDeleteView.as_view(), name='Brands Delete'),
 
-#--------------product/wishlist Model--------------#
+    #--------------product/wishlist Model--------------#
     path('product/wishlist/create/', WishListCreateView.as_view(), name='Brands Create'),
     path('product/wishlist/', WishListReadView.as_view(), name='Brands Read'),
     path('product/wishlist/update/<int:pk>/', WishListUpdateView.as_view(), name='Brands Update'),
     path('product/wishlist/delete/<int:pk>/', WishListDeleteView.as_view(), name='Brands Delete'),
 
-#--------------cart Model--------------#
+    #--------------cart Model--------------#
     path('cart/create/', CartCreateView.as_view(), name='Brands Create'),
     path('cart/', CartReadView.as_view(), name='Brands Read'),
     path('cart/update/<int:pk>/', CartUpdateView.as_view(), name='Brands Update'),
     path('cart/delete/<int:pk>/', CartDeleteView.as_view(), name='Brands Delete'),
 
-#--------------invoice Model--------------#
+    #--------------invoice Model--------------#
     path('invoice/create/', InvoiceCreateView.as_view(), name='Brands Create'),
     path('invoice/', InvoiceReadView.as_view(), name='Brands Read'),
     path('invoice/update/<int:pk>/', InvoiceUpdateView.as_view(), name='Brands Update'),
     path('invoice/delete/<int:pk>/', InvoiceDeleteView.as_view(), name='Brands Delete'),
 
-#--------------payment Model--------------#
+    #--------------payment Model--------------#
     path('payment/create/', PaymentCreateView.as_view(), name='Brands Create'),
     path('payment/', PaymentReadView.as_view(), name='Brands Read'),
     path('payment/update/<int:pk>/', PaymentUpdateView.as_view(), name='Brands Update'),
     path('payment/delete/<int:pk>/', PaymentDeleteView.as_view(), name='Brands Delete'),
 
-#--------------feature Model--------------#
+    #--------------feature Model--------------#
     path('feature/create/', FeaturesCreateView.as_view(), name='Brands Create'),
     path('feature/', FeaturesReadView.as_view(), name='Brands Read'),
     path('feature/update/<int:pk>/', FeaturesUpdateView.as_view(), name='Brands Update'),
     path('feature/delete/<int:pk>/', FeaturesDeleteView.as_view(), name='Brands Delete'),
-
+    
+    #--------------Products By Cateegory-------#
+    path('products/categories/<int:category_ID>/', ProductByCategoryView.as_view(), name='blogs-by-category'),
+    
+    #--------------Product Details--------------# 
+    path('products/details/<int:id>/', ProductDetailView.as_view(), name='product-by-view'),
+    
+    #--------------Product By Brands--------------# 
+    path('products/brands/<int:brand_ID>/', ProductsByBrandsView.as_view(), name='product-by-view'),
 
 ]

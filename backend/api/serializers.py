@@ -21,6 +21,7 @@ class ProductsSerializers(serializers.ModelSerializer):
         model = ProductsModel
         #fields = '__all__'
         fields = [
+            'id',
             'product_name',
             'shortDes',
             'price',
@@ -44,13 +45,13 @@ class ProductsDetailsSerializers(serializers.ModelSerializer):
     class Meta:
         model = ProductsDetailsModel
         #fields = '__all__'
-        fields = ['img1', 'img2', 'img3', 'description', 'color', 'size', 'product_ID', 'product_name']
+        fields = ['id','img1', 'img2', 'img3', 'description', 'color', 'size', 'product_ID', 'product_name']
 
 class ProductSliderSerializers(serializers.ModelSerializer):
     product_name = serializers.CharField(source = 'product_ID.product_name', read_only = True)
     class Meta:
         model = ProductSliderModel
-        fields = ['title', 'des', 'price', 'img', 'productID', 'product_name']
+        fields = ['id','title', 'des', 'price', 'img', 'productID', 'product_name']
 
 
 class UsersSerializers(serializers.ModelSerializer):

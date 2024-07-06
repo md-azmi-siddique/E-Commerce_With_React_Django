@@ -215,3 +215,26 @@ class FeaturesUpdateView(generics.RetrieveUpdateAPIView):
 class FeaturesDeleteView(generics.DestroyAPIView):
     queryset = FeaturesModel.objects.all()
     serializer_class = FeaturesSerializers
+    
+
+#----------------Product Details View--------------
+class ProductDetailView(generics.ListAPIView):
+    serializer_class = ProductsSerializers
+    def get_queryset(self):
+        id = self.kwargs['id']
+        return ProductsModel.objects.filter(id=id)
+    
+#----------------Product By Category--------------
+class ProductByCategoryView(generics.ListAPIView):
+    serializer_class = ProductsSerializers
+    def get_queryset(self):
+        category_id = self.kwargs['category_ID']
+        return ProductsModel.objects.filter(category_ID=category_id)
+    
+    
+#----------Products by Brands-----------
+class ProductsByBrandsView(generics.ListAPIView):
+    serializer_class = ProductsSerializers
+    def get_queryset(self):
+        brand_id = self.kwargs['brand_ID']
+        return ProductsModel.objects.filter(brand_ID = brand_id)
