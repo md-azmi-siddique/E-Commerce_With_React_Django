@@ -10,7 +10,7 @@ const Brands = () => {
     else {
         return (
             <div>
-Hello data is here
+Hello Brand data is here
             </div>
         );
     }

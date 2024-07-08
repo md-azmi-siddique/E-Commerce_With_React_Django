@@ -1,6 +1,7 @@
 import create from 'zustand';
 import axios from 'axios';
-const baseURL = "http://127.0.0.1:8000/api";
+// const baseURL = "http://127.0.0.1:8000/api";
+import baseURL from './baseURL';
 
 const productStore = create((set)=>({
     BrandList: null,
@@ -8,7 +9,7 @@ const productStore = create((set)=>({
         let res = await axios.get(`${baseURL}/brands`)
         if(res.status === 200){
             set({BrandList: res.data})
-            // console.log(res.data)
+            console.log(res.data)
         }
     },
 
