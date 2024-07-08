@@ -4,13 +4,13 @@ import productStore from "../../store/productStore.js";
 
 const Products = () => {
     const {ProductListByRemark} = productStore()
-    if (ProductListByRemark === null) {
+    if (!ProductListByRemark || ProductListByRemark.length === 0) {
         return <ProductSkeleton/>
     }
     else {
         return (
             <div>
-                Hello data is here
+                Hello Product data is here
             </div>
         );
     }

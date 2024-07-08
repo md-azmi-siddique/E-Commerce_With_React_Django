@@ -9,7 +9,7 @@ const productStore = create((set)=>({
         let res = await axios.get(`${baseURL}/brands`)
         if(res.status === 200){
             set({BrandList: res.data})
-            console.log(res.data)
+            // console.log(res.data)
         }
     },
 
@@ -18,7 +18,7 @@ const productStore = create((set)=>({
         let res = await axios.get(`${baseURL}/categories`)
         if(res.status === 200){
             set({CategoryList: res.data})
-            console.log(res.data)
+            // console.log(res.data)
         }
     },
 
@@ -35,6 +35,7 @@ const productStore = create((set)=>({
         let res = await axios.get(`${baseURL}/products/remark/${remark_ID}`)
         if(res.status === 200){
             set({ProductList: res.data})
+            console.log(res.data)
         }
     }
 }))
