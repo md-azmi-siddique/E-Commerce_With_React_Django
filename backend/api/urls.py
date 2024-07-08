@@ -5,16 +5,23 @@ from django.urls import path
 
 urlpatterns = [
     #--------------CategoriesModel--------------#
-    path('categoties/create/', CategoriesCreateView.as_view(), name='Categories Create'),
-    path('categoties/', CategoriesReadView.as_view(), name='Categories Read'),
-    path('categoties/update/<int:pk>/', CategoriesUpdateView.as_view(), name='Categories Update'),
-    path('categoties/delete/<int:pk>/', CategoriesDeleteView.as_view(), name='Categories Delete'),
+    path('categories/create/', CategoriesCreateView.as_view(), name='Categories Create'),
+    path('categotries/', CategoriesReadView.as_view(), name='Categories Read'),
+    path('categories/update/<int:pk>/', CategoriesUpdateView.as_view(), name='Categories Update'),
+    path('categories/delete/<int:pk>/', CategoriesDeleteView.as_view(), name='Categories Delete'),
     
     #--------------Brands Model--------------#
     path('brands/create/', BrandCreateView.as_view(), name='Brands Create'),
     path('brands/', BrandReadView.as_view(), name='Brands Read'),
     path('brands/update/<int:pk>/', BrandUpdateView.as_view(), name='Brands Update'),
     path('brands/delete/<int:pk>/', BrandDeleteView.as_view(), name='Brands Delete'),
+    
+    #--------------Product Remark Model--------------#
+    
+    path('remark/create/', ProductRemarkCreateView.as_view(), name='Brands Create'),
+    path('remark/', ProductRemarkReadView.as_view(), name='Brands Read'),
+    path('remark/update/<int:pk>/', ProductRemarkUpdateView.as_view(), name='Brands Update'),
+    path('remark/delete/<int:pk>/', ProductRemarkDeleteView.as_view(), name='Brands Delete'),
     
     #--------------Products Model--------------#
     path('products/create/', ProductCreateView.as_view(), name='Brands Create'),
@@ -85,5 +92,7 @@ urlpatterns = [
     
     #--------------Product By Brands--------------# 
     path('products/brands/<int:brand_ID>/', ProductsByBrandsView.as_view(), name='product-by-view'),
-
+    
+    #--------------Product By Remark--------------#
+    path('products/remark/<int:remark_ID>/', ProductsByRemarkView.as_view(), name='product-by-view'),
 ]

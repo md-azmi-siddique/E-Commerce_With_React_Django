@@ -22,6 +22,11 @@ class BrandsModel(models.Model):
     
     def __str__(self):
         return self.brand_name
+
+class ProductRemarkModel(models.Model):
+    remark_name = models.CharField(max_length=20)
+    def __str__(self):
+        return self.remark_name
     
 #Product Model
 class ProductsModel(models.Model):
@@ -33,7 +38,8 @@ class ProductsModel(models.Model):
     image = models.ImageField(upload_to='images/productImg/')
     star = models.CharField(max_length=255)
     stock = models.BooleanField(default=True)
-    remark = models.CharField(max_length=255)
+    # remark = models.CharField(max_length=255)
+    remark_ID = models.ForeignKey(ProductRemarkModel, on_delete= models.CASCADE)
     category_ID = models.ForeignKey(CategoriesModel, on_delete= models.CASCADE)
     brand_ID = models.ForeignKey(BrandsModel, on_delete= models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -167,3 +173,4 @@ class FeaturesModel(models.Model):
     
     def __str__(self):
         return self.name
+

@@ -38,7 +38,25 @@ class BrandUpdateView(generics.RetrieveUpdateAPIView):
 class BrandDeleteView(generics.DestroyAPIView):
     queryset = BrandsModel.objects.all()
     serializer_class = BrandsSerializers
-    
+
+#--------------Remark Model--------------#
+
+class ProductRemarkCreateView(generics.ListCreateAPIView):
+    queryset = ProductRemarkModel.objects.all()
+    serializer_class = ProductRemarkSerializers
+
+class ProductRemarkReadView(generics.ListAPIView):
+    queryset = ProductRemarkModel.objects.all()
+    serializer_class = ProductRemarkSerializers
+
+class ProductRemarkUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = ProductRemarkModel.objects.all()
+    serializer_class = ProductRemarkSerializers
+
+class ProductRemarkDeleteView(generics.DestroyAPIView):
+    queryset = ProductRemarkModel.objects.all()
+    serializer_class = ProductRemarkSerializers
+
 
 #--------------Product Model--------------#
 class ProductCreateView(generics.ListCreateAPIView):
@@ -238,3 +256,10 @@ class ProductsByBrandsView(generics.ListAPIView):
     def get_queryset(self):
         brand_id = self.kwargs['brand_ID']
         return ProductsModel.objects.filter(brand_ID = brand_id)
+
+#----------Products by Remark-----------
+class ProductsByRemarkView(generics.ListAPIView):
+    serializer_class = ProductsSerializers
+    def get_queryset(self):
+        remark_ID = self.kwargs['remark_ID']
+        return ProductsModel.objects.filter(remark_ID = remark_ID)
