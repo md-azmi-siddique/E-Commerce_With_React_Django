@@ -38,8 +38,7 @@ const AppNavBar = () => {
                         <img className="img-fluid" src={logo} alt="" width="96px"/>
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav06"
-                            aria
-                            controls="nav06" aria-expanded="false" aria-label="Toggle navigation">
+                            aria-controls="nav06" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="nav06">

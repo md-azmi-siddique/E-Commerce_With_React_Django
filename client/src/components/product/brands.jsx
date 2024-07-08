@@ -1,11 +1,20 @@
 import React from 'react';
+import productStore from "../../store/productStore.js";
+import BrandSkeleton from "../../skeleton/brandSkeleton.jsx";
 
 const Brands = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+    const {BrandList} = productStore()
+    if (BrandList === null) {
+        return <BrandSkeleton/>
+    }
+    else {
+        return (
+            <div>
+Hello data is here
+            </div>
+        );
+    }
+
 };
 
 export default Brands;

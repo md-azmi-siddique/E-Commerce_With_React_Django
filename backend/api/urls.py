@@ -6,7 +6,7 @@ from django.urls import path
 urlpatterns = [
     #--------------CategoriesModel--------------#
     path('categories/create/', CategoriesCreateView.as_view(), name='Categories Create'),
-    path('categotries/', CategoriesReadView.as_view(), name='Categories Read'),
+    path('categories/', CategoriesReadView.as_view(), name='Categories Read'),
     path('categories/update/<int:pk>/', CategoriesUpdateView.as_view(), name='Categories Update'),
     path('categories/delete/<int:pk>/', CategoriesDeleteView.as_view(), name='Categories Delete'),
     
