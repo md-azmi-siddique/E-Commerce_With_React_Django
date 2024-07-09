@@ -7,18 +7,18 @@ import Slider from "../components/product/slider.jsx";
 import Products from "../components/product/products.jsx";
 import Features from "../components/features/features.jsx";
 import featureStore from "../store/featureStore.js";
-import FeatureSkeleton from "../skeleton/featureSkeleton.jsx";
+
 
 const HomePage = () => {
 
-    const {BrandListRequest, CategoryListRequest, SliderListRequest, ProductListByRemarkRequest} = productStore()
+    const {BrandListRequest, CategoryListRequest, SliderListRequest, ListByRemarkRequest} = productStore()
     const {FeatureListRequest} = featureStore()
     useEffect(() => {
         (async ()=>{
             await BrandListRequest();
             await SliderListRequest()
             await CategoryListRequest()
-            await ProductListByRemarkRequest(1)
+            await ListByRemarkRequest(1)
         })()
     }, []);
 

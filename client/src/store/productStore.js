@@ -30,11 +30,11 @@ const productStore = create((set)=>({
         }
     },
 
-    ProductListByRemark: null,
-    ProductListByRemarkRequest:async (remark_ID)=>{
+    ListByRemark: null,
+    ListByRemarkRequest:async (remark_ID)=>{
         let res = await axios.get(`${baseURL}/products/remark/${remark_ID}`)
         if(res.status === 200){
-            set({ProductList: res.data})
+            set({ListByRemark: res.data})
             console.log(res.data)
         }
     }
