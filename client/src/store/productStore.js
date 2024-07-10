@@ -32,12 +32,37 @@ const productStore = create((set)=>({
 
     ListByRemark: null,
     ListByRemarkRequest:async (remark_ID)=>{
+        set({ListByRemark: null})
         let res = await axios.get(`${baseURL}/products/remark/${remark_ID}`)
         if(res.status === 200){
             set({ListByRemark: res.data})
-            console.log(res.data)
+            // console.log(res.data)
+        }
+    },
+
+
+    ListProduct: null,
+    ListByBrandRequest:async (brand_ID)=>{
+        set({ListProduct: null})
+        let res = await axios.get(`${baseURL}/products/brands/${brand_ID}`)
+        if(res.status === 200){
+            set({ListProduct: res.data})
+            // console.log(res.data)
+        }
+    },
+
+    ListByCategoryRequest:async (category_ID)=>{
+        set({ListProduct: null})
+        let res = await axios.get(`${baseURL}/products/categories/${category_ID}`)
+        if(res.status === 200){
+            set({ListProduct: res.data})
+            // console.log(res.data)
         }
     }
+
+
+
+
 }))
 
 export default productStore;
